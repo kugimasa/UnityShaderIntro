@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MaterialSketches
-  m_Shader: {fileID: 4800000, guid: a205a2c54a7c94b64b3ffe92b1853efc, type: 3}
+  m_Name: Bounce
+  m_Shader: {fileID: 4800000, guid: 9ef980af0ebc44cd0b64a58a35cdefb7, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -69,9 +69,16 @@ Material:
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _Speed: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
+    - _posXSin: 0.82
+    - _posYCos: 0.6
+    - _posYSin: 0.41
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _backGround: {r: 0, g: 0, b: 0, a: 1}
+    - _ballColor: {r: 0.990566, g: 0.60031915, b: 0.21026169, a: 1}
+    - _color: {r: 1, g: 0.9534915, b: 0.740566, a: 1}

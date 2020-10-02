@@ -1,4 +1,4 @@
-﻿Shader "Custom/ShaderSkeches"
+﻿Shader "Custom/Glow"
 {
     Properties
     {
