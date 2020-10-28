@@ -1,4 +1,4 @@
-﻿Shader "Custom/new"
+﻿Shader "Custom/Trichromatic"
 {
     Properties
     {
@@ -32,8 +32,6 @@
     
     SubShader
     {
-        Tags {"Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent"}
-        Blend SrcAlpha OneMinusSrcAlpha
         Pass
         {
             CGPROGRAM
