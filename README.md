@@ -15,3 +15,6 @@
 <a href="https://github.com/kugimasa/UnityShaderIntro/blob/main/Assets/Trichromatic.shader">
   <img align="left"  width="100" height="100" src="Works/trichromatic.gif">
 </a>
+<a href="https://github.com/kugimasa/UnityShaderIntro/blob/main/Assets/YinYang.shader">
+  <img align="left"  width="100" height="100" src="Works/yinyang.gif">
+</a>
