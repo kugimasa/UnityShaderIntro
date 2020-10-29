@@ -1,4 +1,4 @@
-﻿Shader "Custom/Magatama"
+﻿Shader "Custom/YinYang"
 {
     Properties
     {
@@ -16,7 +16,7 @@
     #define PI 3.14159265359
 
     float4 _Color_Yin;
-    float4 _Color_Yan;
+    float4 _Color_Yang;
     float _RotSpeed;
     float _Dot_Radius;
     float _Outline;
@@ -29,27 +29,27 @@
     
     float4 frag(v2f_img i):SV_Target
     {
-        float angle = _Time.y * _RotSpeed;
+        float angle = (sin(_Time.z) + cos(_Time.z) * cos(_Time.z)) * _RotSpeed;
+        _Outline =  abs(sin(_Time.z)) * _Outline;
         float2 center = float2(0.5f, 0.5f);
-        // i.uv = rotation(0.5 - i.uv, angle);
+        i.uv = rotation(0.5 - i.uv, angle) + 0.5;
         float outline_r = 0.5f;
         float base_r = outline_r - _Outline;
         float dot_center_y = (base_r)/2 + _Outline;
 
         float2 center_yin = float2(0.5f, dot_center_y);
-        float2 center_yan = float2(0.5f, 1.0f - dot_center_y);
-        float dot_yin = step(distance(center_yan, i.uv),_Dot_Radius);
-        float dot_yan = step(distance(center_yin, i.uv),_Dot_Radius);
+        float2 center_yang = float2(0.5f, 1.0f - dot_center_y);
+        float dot_yin = step(distance(center_yang, i.uv),_Dot_Radius);
+        float dot_yang = step(distance(center_yin, i.uv),_Dot_Radius);
         float circle_yin = step(distance(center_yin, i.uv), base_r/2);
-        float circle_yan = step(distance(center_yan, i.uv), base_r/2);
+        float circle_yang = step(distance(center_yang, i.uv), base_r/2);
         float base_circle_yin = step(distance(center, i.uv), base_r);
         if (i.uv.x >= 0.5f)
         {
             base_circle_yin = 0;
         }
         float outline_circle = step(distance(center, i.uv), outline_r);
-        float img = step(1, outline_circle - base_circle_yin - circle_yin + circle_yan) - dot_yin + dot_yan;
-        return img;
+        return step(1, outline_circle - base_circle_yin - circle_yin + circle_yang) - dot_yin + dot_yang;
     }
     ENDCG
     
