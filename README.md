@@ -1,5 +1,7 @@
 # UnityShaderIntro
 
+Click on the gif image and jump to the shader code :eyes:
+
 <a href="https://github.com/kugimasa/UnityShaderIntro/blob/main/Assets/Glow.shader">
   <img align="left" width="100" height="100" src="Works/glow.gif">
 </a>  
